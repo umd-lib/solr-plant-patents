@@ -1,4 +1,4 @@
-FROM solr:8.1.1 as builder
+FROM solr:8.11.0@sha256:f9f6eed52e186f8e8ca0d4b7eae1acdbb94ad382c4d84c8220d78e3020d746c6 as builder
 
 # Switch to root user
 USER root
@@ -36,7 +36,7 @@ RUN /opt/solr/bin/solr start && sleep 3 && \
     --data-binary @/tmp/data.csv -H 'Content-type:text/csv; charset=utf-8' && \
     /opt/solr/bin/solr stop
     
-FROM solr:8.1.1-slim
+FROM solr:8.11.0-slim@sha256:530547ad87f3fb02ed9fbbdbf40c0bfbfd8a0b472d8fea5920a87ec65aaacaef
 
 ENV SOLR_HOME=/apps/solr/data
 
