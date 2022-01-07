@@ -1,3 +1,11 @@
+# Dockerfile for the solr-plant-patents Docker image
+#
+# To build:
+#
+# docker build -t docker.lib.umd.edu/solr-plant-patents:<VERSION> -f Dockerfile .
+#
+# where <VERSION> is the Docker image version to create.
+
 FROM docker.lib.umd.edu/csv-validator:1.1.5-umd-0 as validator
 
 # Add the files
@@ -43,7 +51,7 @@ RUN /opt/solr/bin/solr start && sleep 3 && \
     curl -v "http://localhost:8983/solr/plant-patents/update/csv?commit=true&f.inventor.split=true&f.inventor.separator=;&f.city.split=true&f.city.separator=;&f.state.split=true&f.state.separator=;&f.country.split=true&f.country.separator=;" \
     --data-binary @/tmp/data.csv -H 'Content-type:text/csv; charset=utf-8' && \
     /opt/solr/bin/solr stop
-    
+
 FROM solr:8.11.0-slim@sha256:530547ad87f3fb02ed9fbbdbf40c0bfbfd8a0b472d8fea5920a87ec65aaacaef
 
 ENV SOLR_HOME=/apps/solr/data
