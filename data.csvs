@@ -1,0 +1,19 @@
+version 1.0
+@totalColumns 17
+id: notEmpty unique positiveInteger
+patent_number:
+date:
+year:
+title:
+display_title:
+large_category:
+inventor:
+city:
+state:
+country:
+uspc:
+image_url: notEmpty
+patent_url:
+scan_date:
+pages:
+application_number:

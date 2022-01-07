@@ -1,3 +1,11 @@
+FROM docker.lib.umd.edu/csv-validator:1.1.5-umd-0 as validator
+
+# Add the files
+COPY data.csv /tmp/data.csv
+COPY data.csvs /tmp/data.csvs
+
+RUN validate /tmp/data.csv /tmp/data.csvs
+
 FROM solr:8.11.0@sha256:f9f6eed52e186f8e8ca0d4b7eae1acdbb94ad382c4d84c8220d78e3020d746c6 as builder
 
 # Switch to root user
@@ -27,7 +35,7 @@ RUN /opt/solr/bin/solr start && \
 COPY conf /apps/solr/data/plant-patents/conf/
 
 # Add the data to be loaded
-ADD data.csv /tmp/data.csv
+COPY --from=validator /tmp/data.csv /tmp/data.csv
 
 # Load the data to plant-patents core
 RUN /opt/solr/bin/solr start && sleep 3 && \
