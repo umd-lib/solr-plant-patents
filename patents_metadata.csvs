@@ -1,0 +1,20 @@
+version 1.1
+@totalColumns 17
+patent_number: notEmpty unique regex("^PP\d\d\d\d\d$")
+// date must be empty, or "YYYY-MM-DD"
+date: empty or regex("\d\d\d\d-[01]\d-[0123]\d")
+title:
+large_category:
+inventor:
+city:
+state:
+country:
+uspc:
+application_number:
+application_date:
+application_year:
+assignee:
+assignee_city:
+assignee_state:
+assignee_country:
+notes:
