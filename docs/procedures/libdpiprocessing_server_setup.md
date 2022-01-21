@@ -51,35 +51,35 @@ plant_patents/
 
 1) SSH to the "libdpiprocessing" server:
 
-    ```bash
-    ssh libdpiprocessing.lib.umd.edu
-    ```
+```bash
+ssh libdpiprocessing.lib.umd.edu
+```
 
 2) Switch to the "dpiprocessing" service account:
 
-    ```bash
-    su - dpiprocessing
-    ```
+```bash
+su - dpiprocessing
+```
 
 3) Switch to the "dpiprocessing" service account home directory:
 
-    ```bash
-    cd ~
-    ```
+```bash
+cd ~
+```
 
 4) Construct the directories:
 
-    ```bash
-    mkdir plant_patents
-    mkdir -p plant_patents/docker_mount/box/metadata
-    mkdir -p plant_patents/docker_mount/box/PDFs
-    mkdir -p plant_patents/plastron
-    ```
+```bash
+mkdir plant_patents
+mkdir -p plant_patents/docker_mount/box/metadata
+mkdir -p plant_patents/docker_mount/box/PDFs
+mkdir -p plant_patents/plastron
+```
 
 5) Switch to the "plant_patents/docker_mount" directory and clone the
-    "umd-lib/solr-plant-patents" GitHub repository:
+"umd-lib/solr-plant-patents" GitHub repository:
 
-    ```bash
-    cd plant_patents/docker_mount
-    git clone git@github.com:umd-lib/solr-plant-patents.git
-    ```
+```bash
+cd plant_patents/docker_mount
+git clone git@github.com:umd-lib/solr-plant-patents.git
+```
