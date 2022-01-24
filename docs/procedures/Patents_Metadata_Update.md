@@ -149,9 +149,9 @@ Any validation errors will be displayed, otherwise "PASS" will be output.
 **Note:** Validation errors should be reported back to STEM, and corrected
 before going on to the next step.
 
-### 9) Merge the "patents_metadata.csv" file into "data.csv"
+### 7) Merge the "patents_metadata.csv" file into "data.csv"
 
-9.1) Using the "merge_csv" tool from "umd-lib/plant-patents-ingest", merge
+7.1) Using the "merge_csv" tool from "umd-lib/plant-patents-ingest", merge
   the "scans_metadata.csv" file into the "data.csv" file, generating a
   "data_updated.csv" file:
 
@@ -167,9 +167,9 @@ ingest_docker merge_csv \
 "patents_metadata.csv" file is a "source of truth", so any differences are
 resolved in favor of that file.
 
-### 10) Update the derived Solr fields
+### 8) Update the derived Solr fields
 
-10.1) Using the "derive_solr_fields" tool, derive the various Solr fields from
+8.1) Using the "derive_solr_fields" tool, derive the various Solr fields from
 "data_updated.csv" file, creating a "data_updated_derived.csv file":
 
 ```bash
@@ -178,23 +178,23 @@ ingest_docker derive_solr_fields \
     --output-file /tmp/host/solr-plant-patents/data_updated_derived.csv
 ```
 
-### 11) Replace the "data.csv" file
+### 9) Replace the "data.csv" file
 
-11.1) Rename the "data_updated_derived.csv" file to "data.csv":
+9.1) Rename the "data_updated_derived.csv" file to "data.csv":
 
 ```bash
 mv $BASE_DIR/docker_mount/solr-plant-patents/data_updated_derived.csv $BASE_DIR/docker_mount/solr-plant-patents/data.csv
 ```
 
-### 13) Validate the "data.csv" file
+### 10) Validate the "data.csv" file
 
-13.1) Switch to the "$BASE_DIR/docker_mount/solr-plant-patents" directory:
+10.1) Switch to the "$BASE_DIR/docker_mount/solr-plant-patents" directory:
 
 ```bash
 cd $BASE_DIR/docker_mount/solr-plant-patents
 ```
 
-13.2) Run the "csv-validator" Docker image:
+10.2) Run the "csv-validator" Docker image:
 
 ```bash
 validator_docker validate \
@@ -208,7 +208,7 @@ Any validation errors will be displayed, otherwise "PASS" will be output.
 or some other issue, which will need to be corrected before going on to the
 next step.
 
-13.3) Commit the changes in the "data.csv" file to the "solr-plant-patents":
+10.3) Commit the changes in the "data.csv" file to the "solr-plant-patents":
 
 ```bash
 git add data.csv
@@ -218,7 +218,7 @@ git commit
 **Note:** The "fcrepo_urls.csv", "file_metadata.csv", and "scans_metadata.csv",
 should *not* be committed.
 
-13.4) Delete the temporary working files:
+10.4) Delete the temporary working files:
 
 ```bash
 rm fcrepo_urls.csv

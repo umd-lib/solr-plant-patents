@@ -139,7 +139,7 @@ alias plastron_docker='docker run --rm --entrypoint "plastron" --user `id -u`:`i
 alias validator_docker='docker run --rm --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/csv-validator:1.1.5-umd-0'
 ```
 
-### 3) Ensure solr-plant-patents repository is at the latest version
+### 4) Ensure solr-plant-patents repository is at the latest version
 
 4.1) Switch to the "$BASE_DIR/solr-plant-patents" directory:
 
