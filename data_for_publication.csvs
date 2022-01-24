@@ -1,0 +1,22 @@
+version 1.1
+@totalColumns 17
+id: notEmpty unique regex("^PP\d\d\d\d\d$")
+patent_number: notEmpty unique regex("^PP\d\d\d\d\d$")
+// date must be empty, or "YYYY-MM-DD"
+date: empty or regex("\d\d\d\d-[01]\d-[0123]\d")
+year: empty or regex("\d\d\d\d")
+title:
+// display_title must be either "PP#####" or "PP##### -- <some text>"
+display_title: regex("^PP\d\d\d\d\d$") or regex("^PP\d\d\d\d\d -- .+$")
+large_category:
+inventor:
+city:
+state:
+country:
+uspc:
+image_url: notEmpty
+patent_url: notEmpty
+// scan_date must be "YYYY-MM-DD HH:mm:dd"
+scan_date: notEmpty regex("\d\d\d\d-[01]\d-[0123]\d [012]\d:[012345]\d:[012345]\d")
+pages: notEmpty
+application_number:
