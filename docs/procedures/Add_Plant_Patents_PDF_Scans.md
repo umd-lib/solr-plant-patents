@@ -207,7 +207,7 @@ plastron_docker --config /tmp/host/plastron/config/fcrepo.yml stub \
     --binary-column filepath \
     --rename-binary-column image_url \
     --member-of https://fcrepo.lib.umd.edu/fcrepo/rest/pcdm/db/c7/f3/44/dbc7f344-c0fa-49c9-af29-37270fa185c8 \
-    --access umdaccess:Public \
+    --access http://vocab.lib.umd.edu/access#Public \
     --container /pcdm \
     --output-file /tmp/host/solr-plant-patents/fcrepo_urls.csv \
     /tmp/host/plastron/plastron_batch.csv
