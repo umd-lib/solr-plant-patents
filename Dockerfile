@@ -15,7 +15,7 @@ COPY data.csvs /tmp/data.csvs
 
 RUN validate /tmp/data.csv /tmp/data.csvs
 
-FROM docker.lib.umd.edu/plant-patents-ingest:1.0.0-rc1 as filter_for_publication
+FROM docker.lib.umd.edu/plant-patents-ingest:1.0.0 as filter_for_publication
 # This stage filters the "data.csv" file to only those records ready for
 # publication, generating a "data_for_publication.csv" file.
 
