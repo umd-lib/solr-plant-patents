@@ -24,7 +24,7 @@ The following Docker images are used by this procedure:
 
 * docker.lib.umd.edu/csv-validator:1.1.5-umd-0
 * docker.lib.umd.edu/plant-patents-ingest:1.0.0
-* docker.lib.umd.edu/plastrond:3.6.0rc6
+* docker.lib.umd.edu/plastrond:3.6.0rc7
 * bitnami/rclone:1.57.0
 
 Thee Docker images should be available in the UMD Nexus prior to running
@@ -134,7 +134,7 @@ alias rclone_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="
 
 alias ingest_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host --volume "$ARCHIVE_BINARIES_DIR":/tmp/archive_binaries docker.lib.umd.edu/plant-patents-ingest:1.0.0'
 
-alias plastron_docker='docker run --rm --entrypoint "plastron" --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/plastrond:3.6.0rc6'
+alias plastron_docker='docker run --rm --entrypoint "plastron" --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/plastrond:3.6.0rc7'
 
 alias validator_docker='docker run --rm --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/csv-validator:1.1.5-umd-0'
 ```
@@ -207,7 +207,7 @@ plastron_docker --config /tmp/host/plastron/config/fcrepo.yml stub \
     --binary-column filepath \
     --rename-binary-column image_url \
     --member-of https://fcrepo.lib.umd.edu/fcrepo/rest/pcdm/db/c7/f3/44/dbc7f344-c0fa-49c9-af29-37270fa185c8 \
-    --access http://vocab.lib.umd.edu/access#Public \
+    --access umdaccess:Public \
     --container /pcdm \
     --output-file /tmp/host/solr-plant-patents/fcrepo_urls.csv \
     /tmp/host/plastron/plastron_batch.csv
