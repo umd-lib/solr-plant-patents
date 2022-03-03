@@ -2,7 +2,9 @@
 data
 uploads
 
-# Ignore files created by the Plant Patents update procedura
+# Ignore files created by the Plant Patents update procedure
 fcrepo_urls.csv
 file_metadata.csv
 scans_metadata.csv
+
+data_updated.csv

@@ -215,13 +215,11 @@ git add data.csv
 git commit
 ```
 
-**Note:** The "fcrepo_urls.csv", "file_metadata.csv", and "scans_metadata.csv",
-should *not* be committed.
+**Note:** The "data_updated.csv" file should *not* be committed.
 
-10.4) Delete the temporary working files:
+10.4) Delete the temporary working file:
 
 ```bash
-rm fcrepo_urls.csv
-rm file_metadata.csv
-rm scans_metadata.csv
+rm 
+rm data_updated.csv
 ```
