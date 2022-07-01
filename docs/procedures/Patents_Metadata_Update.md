@@ -97,6 +97,13 @@ export BASE_DIR=/home/dpiprocessing/plant_patents
 export BOX_BASE_DIR="/Plant Patents Digitization Project"
 ```
 
+2.3) Create a "BOX_ACCESS_TOKEN" environment variable where `<BOX_ACCESS_TOKEN>`
+is the Box access token from the prerequisites:
+
+```bash
+export BOX_ACCESS_TOKEN='<BOX_ACCESS_TOKEN>'
+```
+
 ### 3) Create Docker aliases
 
 3.1) Run the following commands to create aliases to simplify the running of the
@@ -208,11 +215,13 @@ Any validation errors will be displayed, otherwise "PASS" will be output.
 or some other issue, which will need to be corrected before going on to the
 next step.
 
-10.3) Commit the changes in the "data.csv" file to the "solr-plant-patents":
+10.3) Commit the changes in the "data.csv" file and push to the upstream
+repository:
 
 ```bash
 git add data.csv
 git commit
+git push
 ```
 
 **Note:** The "data_updated.csv" file should *not* be committed.
@@ -220,6 +229,5 @@ git commit
 10.4) Delete the temporary working file:
 
 ```bash
-rm 
 rm data_updated.csv
 ```

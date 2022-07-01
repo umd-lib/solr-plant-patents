@@ -305,11 +305,13 @@ Any validation errors will be displayed, otherwise "PASS" will be output.
 or some other issue, which will need to be corrected before going on to the
 next step.
 
-13.3) Commit the changes in the "data.csv" file to the "solr-plant-patents":
+13.3) Commit the changes in the "data.csv" file and push to the upstream
+repository:
 
 ```bash
 git add data.csv
 git commit
+git push
 ```
 
 **Note:** The "fcrepo_urls.csv", "file_metadata.csv", and "scans_metadata.csv",
@@ -321,4 +323,23 @@ should *not* be committed.
 rm fcrepo_urls.csv
 rm file_metadata.csv
 rm scans_metadata.csv
+```
+
+13.5) Switch to the "$BASE_DIR/docker_mount/box/PDFs" directory:
+
+```bash
+cd $BASE_DIR/docker_mount/box/PDFs
+```
+
+and verify that all the files have been transferred:
+
+```bash
+find . -type f
+<Should not return any results>
+```
+
+Delete any subdirectories:
+
+```bash
+rm -rf $BASE_DIR/docker_mount/box/PDFs/*
 ```

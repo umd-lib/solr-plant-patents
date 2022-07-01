@@ -17,14 +17,15 @@ service account on the "libdpiprocessing.lib.umd.edu" server.
 The setup of the libdpiprocessing.lib.umd.edu server is outlined in
 [docs/procedures/libdpiprocessing_server_setup.md](docs/procedures/libdpiprocessing_server_setup.md)
 
-* [Add Plant Patents PDF Scans](docs/procedures/Add_Plant_Patents_PDF_Scans.md) -
-Documents uploading new Plant Patents PDF scans provided by STEM into fcrepo
-using the "libdpiprocessing" server, as well as updating the "data.csv" file in
-the "solr-plant-patents" directory.
+Typically only one of the procedures is run, based on what is being updated:
 
-* [Patents Metadata Update](docs/procedures/Patents_Metadata_Update.md) -
-Documents updating the "data.csv" in the "solr-plant-patents" directory with
-changes from the "patents_metadata.csv" file provided by STEM.
+* When both uploading new Plant Patents PDF scans to fcrepo, and updating the
+"data.csv" file in the "solr-plant-patents" directory, use
+[Add Plant Patents PDF Scans](docs/procedures/Add_Plant_Patents_PDF_Scans.md)
+
+* When only updating the "data.csv" file in the "solr-plant-patents" directory
+with changes from the "patents_metadata.csv" file provided by STEM, use
+[Patents Metadata Update](docs/procedures/Patents_Metadata_Update.md)
 
 ## data.csv File
 
@@ -95,7 +96,7 @@ This stage uses the "filter_for_publication" command from the
 filter the raw "data.csv" file, generating a "data_for_publication.csv"
 containing the records to include in the Solr core.
 
-### "validator_date_for_publication_csv" Stage
+### "validator_data_for_publication_csv" Stage
 
 This stage uses the "docker.lib.umd.edu/csv-validator" Docker image to validate
 the "data_for_publication.csv" file using the "data_for_publication.csvs" CSV
