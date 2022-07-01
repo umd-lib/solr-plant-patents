@@ -17,15 +17,16 @@ service account on the "libdpiprocessing.lib.umd.edu" server.
 The setup of the libdpiprocessing.lib.umd.edu server is outlined in
 [docs/procedures/libdpiprocessing_server_setup.md](docs/procedures/libdpiprocessing_server_setup.md)
 
-Typically only one of the procedures is run, based on what is being updated:
+Typically, both Plant Patents PDF scans and the associated Plant Patents
+metadata provied by STEM are updated simultaneously, in which case both of the
+following procedures should be used:
 
-* When both uploading new Plant Patents PDF scans to fcrepo, and updating the
-"data.csv" file in the "solr-plant-patents" directory, use
-[Add Plant Patents PDF Scans](docs/procedures/Add_Plant_Patents_PDF_Scans.md)
+* [Add Plant Patents PDF Scans](docs/procedures/Add_Plant_Patents_PDF_Scans.md) -
+  Uploads Plant Patents PDF scans and updates "data.csv" file with data
+  regarding the scans.
 
-* When only updating the "data.csv" file in the "solr-plant-patents" directory
-with changes from the "patents_metadata.csv" file provided by STEM, use
-[Patents Metadata Update](docs/procedures/Patents_Metadata_Update.md)
+* [Patents Metadata Update](docs/procedures/Patents_Metadata_Update.md) -
+  Updates the "data.csv" file with the Plant Patents metadata provied by STEM.
 
 ## data.csv File
 
