@@ -9,6 +9,9 @@ and updating the "data.csv" file in the "solr-plant-patents" repository.
 
 * Patent scans are placed in "Plant Patents Digitization Project/PDFs" folder
     in Box (<https://umd.app.box.com/folder/3598931071?s=yijnsgrz0v0jj1yuq09czqkfs9e83h5i>
+    **Note:** To avoid duplicate uploads to fcrepo, this folder must only
+    contain new PDF scans (i.e., must not include PDF scans from previous
+    uploads).
 
 ### Outputs
 
@@ -343,3 +346,6 @@ Delete any subdirectories:
 ```bash
 rm -rf $BASE_DIR/docker_mount/box/PDFs/*
 ```
+
+13.6) Remind the STEM contact (in an email, or similar) to remove the uploaded
+    PDF scans from the "Plant Patents Digitization Project/PDFs" folder in Box.
