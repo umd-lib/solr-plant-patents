@@ -62,20 +62,48 @@ The National Archives of the UK.
 
 ## Building the Docker Image
 
+**Note:** As of August 15, 2023, Docker appears to have intermittent problems
+building the "solr-plant-patents" Docker image on M-Series (Apple Silicon)
+MacBooks.
+
+The Docker image for production use should be built in Kubernetes (see
+<https://github.com/umd-lib/k8s/blob/main/docs/DockerBuilds.md> for more
+information and prerequisites).
+
 When building the Docker image, the "data.csv" file will be used to populate the
 Solr database.
 
 To build the Docker image named "docker.lib.umd.edu/solr-plant-patents":
 
-```bash
-> docker build -t docker.lib.umd.edu/solr-plant-patents .
+```zsh
+$ kubectl config use-context build
+$ docker buildx build . --builder=kube -t docker.lib.umd.edu/solr-plant-patents --push
 ```
+
+The Docker image will be automatically pushed to the Nexus.
 
 To run the freshly built Docker container on port 8983:
 
-```bash
-> docker run -it --rm -p 8983:8983 docker.lib.umd.edu/solr-plant-patents
+```zsh
+$ docker run -it --rm -p 8983:8983 docker.lib.umd.edu/solr-plant-patents
 ```
+
+The Solr application should be available at <http://localhost:8983/solr>.
+
+----
+
+**Note:** If running on an M-Series Macbook, and Solr does not seem to start
+(or does not become available at <http://localhost:8983/solr>) try running the
+command with the "SOLR_JAVA_STACK_SIZE" environment variable set:
+
+```zsh
+$ docker run -it --rm -p 8983:8983 -e SOLR_JAVA_STACK_SIZE='-Xss512k' docker.lib.umd.edu/solr-plant-patents
+```
+
+The use of the `-e SOLR_JAVA_STACK_SIZE=-Xss512k` when running on M-Series
+MacBooks was suggested by <https://stackoverflow.com/a/70217469>.
+
+----
 
 ## Docker Build Stages
 
