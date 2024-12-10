@@ -7,9 +7,9 @@ into the "data.csv" file in the "solr-plant-patents" repository.
 
 ### Inputs
 
-* The "patents_metadata.csv" file (<https://umd.app.box.com/file/907935674011>)
-in the "Plant Patents Digitization Project/Metadata" folder
-(<https://umd.app.box.com/folder/3603951785>) has been updated.
+* The "patents_metadata.csv" file in the
+  "Plant Patents Digitization Project/Metadata" folder
+  (<https://umd.app.box.com/folder/3603951785>) has been updated.
 
 ### Outputs
 
@@ -34,9 +34,9 @@ The following procedure uses "rclone" to retrieve files from Box. An access
 token is needed to authorize "rclone" to access Box. To obtain an access token:
 
 Pre. 1.1) On a local workstation, go to
-<https://github.com/rclone/rclone/releases/tag/v1.57.0> and download the
-appropriate Zip file for your operating system. For Mac OS, this will be
-"rclone-v1.57.0-osx-amd64.zip".
+    <https://github.com/rclone/rclone/releases/tag/v1.57.0> and download the
+    appropriate Zip file for your operating system. For Apple Silicon MacBooks,
+    this will be "rclone-v1.57.0-osx-arm64.zip".
 
 Pre. 1.2) Unzip the downloaded file
 

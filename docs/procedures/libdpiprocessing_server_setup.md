@@ -31,7 +31,7 @@ the "dpiprocessing" service account.
 
 3) In the "dpiprocessing" service account home directory, edit the ".bashrc"
 and add a "git_authors.sh" file as outlined in
-<https://confluence.umd.edu/display/~mohideen/Git+Service+Account+Commits>
+<https://umd-dit.atlassian.net/wiki/spaces/LIB/pages/38404219/Git+Service+Account+Commits>
 
 ## "plant_patents" subdirectory Setup
 

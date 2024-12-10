@@ -18,7 +18,7 @@ The setup of the libdpiprocessing.lib.umd.edu server is outlined in
 [docs/procedures/libdpiprocessing_server_setup.md](docs/procedures/libdpiprocessing_server_setup.md)
 
 Typically, both Plant Patents PDF scans and the associated Plant Patents
-metadata provied by STEM are updated simultaneously, in which case both of the
+metadata provided by STEM are updated simultaneously, in which case both of the
 following procedures should be used:
 
 * [Add Plant Patents PDF Scans](docs/procedures/Add_Plant_Patents_PDF_Scans.md) -
@@ -26,11 +26,11 @@ following procedures should be used:
   regarding the scans.
 
 * [Patents Metadata Update](docs/procedures/Patents_Metadata_Update.md) -
-  Updates the "data.csv" file with the Plant Patents metadata provied by STEM.
+  Updates the "data.csv" file with the Plant Patents metadata provided by STEM.
 
 ## data.csv File
 
-The "data.csv" file contains both "publishable" and "work-in-progess" records
+The "data.csv" file contains both "publishable" and "work-in-progress" records
 derived from the Plant Patents metadata provided by STEM.
 
 As part of the Docker build, the "work-in-progress" records will be filtered
@@ -57,7 +57,7 @@ verify the data files used for generating the Solr code:
 The "csv-validator-docker" Docker image from
 <https://github.com/umd-lib/csv-validator-docker> is used to perform the actual
 validation. This Docker image uses the "csv-validator" tool
-(<http://digital-preservation.github.io/csv-validator/> )provided by
+(<http://digital-preservation.github.io/csv-validator/>) provided by
 The National Archives of the UK.
 
 ## Building the Docker Image
@@ -67,7 +67,7 @@ building the "solr-plant-patents" Docker image on M-Series (Apple Silicon)
 MacBooks.
 
 The Docker image for production use should be built in Kubernetes (see
-<https://github.com/umd-lib/k8s/blob/main/docs/DockerBuilds.md> for more
+<https://github.com/umd-lib/devops/blob/main/k8s/docs/DockerBuilds.md> for more
 information and prerequisites).
 
 When building the Docker image, the "data.csv" file will be used to populate the
@@ -92,7 +92,7 @@ The Solr application should be available at <http://localhost:8983/solr>.
 
 ----
 
-**Note:** If running on an M-Series Macbook, and Solr does not seem to start
+**Note:** If running on an M-Series MacBook, and Solr does not seem to start
 (or does not become available at <http://localhost:8983/solr>) try running the
 command with the "SOLR_JAVA_STACK_SIZE" environment variable set:
 
