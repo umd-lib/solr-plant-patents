@@ -8,10 +8,11 @@ and updating the "data.csv" file in the "solr-plant-patents" repository.
 ### Inputs
 
 * Patent scans are placed in "Plant Patents Digitization Project/PDFs" folder
-    in Box (<https://umd.app.box.com/folder/3598931071?s=yijnsgrz0v0jj1yuq09czqkfs9e83h5i>
-    **Note:** To avoid duplicate uploads to fcrepo, this folder must only
-    contain new PDF scans (i.e., must not include PDF scans from previous
-    uploads).
+  in Box (<https://umd.app.box.com/folder/167386044016>).
+
+  **Note:** To avoid duplicate uploads to fcrepo, this folder must only
+  contain new PDF scans (i.e., must not include PDF scans from previous
+  uploads).
 
 ### Outputs
 
@@ -42,8 +43,8 @@ token is needed to authorize "rclone" to access Box. To obtain an access token:
 
 Pre. 1.1) On a local workstation, go to
     <https://github.com/rclone/rclone/releases/tag/v1.57.0> and download the
-    appropriate Zip file for your operating system. For Mac OS, this will be
-    "rclone-v1.57.0-osx-amd64.zip".
+    appropriate Zip file for your operating system. For Apple Silicon MacBooks,
+    this will be "rclone-v1.57.0-osx-arm64.zip".
 
 Pre. 1.2) Unzip the downloaded file
 
