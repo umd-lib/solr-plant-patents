@@ -112,7 +112,7 @@ commands:
 ```bash
 alias rclone_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host bitnami/rclone:1.57.0 --box-token "$BOX_ACCESS_TOKEN"'
 
-alias ingest_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/plant-patents-ingest:1.0.0'
+alias ingest_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/plant-patents-ingest:2.1.0'
 
 alias validator_docker='docker run --rm --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/csv-validator:1.1.5-umd-0'
 ```
@@ -166,6 +166,7 @@ before going on to the next step.
 ingest_docker merge_csv \
           --base-file /tmp/host/solr-plant-patents/data.csv \
           --merge-file /tmp/host/box/metadata/patents_metadata.csv \
+          --key-field patent_number \
           --skip-validation \
           --output-file /tmp/host/solr-plant-patents/data_updated.csv
 ```

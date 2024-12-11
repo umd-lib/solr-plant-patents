@@ -136,7 +136,7 @@ commands:
 ```bash
 alias rclone_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host bitnami/rclone:1.57.0 --box-token "$BOX_ACCESS_TOKEN"'
 
-alias ingest_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host --volume "$ARCHIVE_BINARIES_DIR":/tmp/archive_binaries docker.lib.umd.edu/plant-patents-ingest:1.0.0'
+alias ingest_docker='docker run --rm --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host --volume "$ARCHIVE_BINARIES_DIR":/tmp/archive_binaries docker.lib.umd.edu/plant-patents-ingest:2.1.0'
 
 alias plastron_docker='docker run --rm --entrypoint "plastron" --user `id -u`:`id -g` --env BOX_BASE_DIR="$BOX_BASE_DIR" --volume "$BASE_DIR/docker_mount":/tmp/host docker.lib.umd.edu/plastrond:3.6.0rc7'
 
@@ -253,6 +253,7 @@ ingest_docker csvjoin --no-inference --left --columns "patent_number" \
 ingest_docker merge_csv \
     --base-file /tmp/host/solr-plant-patents/data.csv \
     --merge-file /tmp/host/solr-plant-patents/scans_metadata.csv \
+    --key-field patent_number \
     --output-file /tmp/host/solr-plant-patents/data_updated.csv
 ```
 
